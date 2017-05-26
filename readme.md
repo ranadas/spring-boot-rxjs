@@ -18,3 +18,7 @@ http://www.concretepage.com/java/jdk-8/java-8-completablefuture-example
 
 
 http://www.adam-bien.com/roller/abien/entry/java_8_completablefuture_example
+
+
+//A high-performance JDBC connection pool.
+https://brettwooldridge.github.io/HikariCP/

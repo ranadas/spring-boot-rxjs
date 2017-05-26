@@ -1,20 +1,24 @@
 buildscript {
 	ext {
 		springBootVersion = '2.0.0.M1'
+		ext.kotlin_version = '1.1.2-2'
 	}
 	repositories {
 		mavenLocal()
 		mavenCentral()
+		jcenter()
 		maven { url "https://repo.spring.io/snapshot" }
 		maven { url "https://repo.spring.io/milestone" }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath 'com.netflix.nebula:gradle-rxjava-project-plugin:4.+', "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 	}
 }
 
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'kotlin'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
@@ -40,4 +44,5 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
     compile group: 'io.reactivex', name: 'rxjava', version: '1.3.0'
+	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
